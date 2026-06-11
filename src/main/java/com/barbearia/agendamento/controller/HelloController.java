@@ -1,34 +1,22 @@
 package com.barbearia.agendamento.controller;
 
+import com.barbearia.agendamento.model.Agendamento;
+import com.barbearia.agendamento.service.AgendamentoService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.barbearia.agendamento.model.Agendamento;
 
 @RestController
 public class HelloController {
+
+    private AgendamentoService agendamentoService = new AgendamentoService();
 
     @GetMapping("/")
     public String hello() {
         return "Servidor da barbearia funcionando!";
     }
+
     @GetMapping("/api/agendamento")
-
     public Agendamento criarAgendamentoTeste() {
-
-
-
-    Agendamento agendamento = new Agendamento();
-
-agendamento.setNomeCliente("Juan");
-
-agendamento.setNomeBarbeiro("Felipe");
-
-agendamento.setData("2026-05-28");
-
-agendamento.setHorario("14:00");
-
-agendamento.setStatus("AGENDADO");
-
-return agendamento;
+        return agendamentoService.criarAgendamento();
     }
 }

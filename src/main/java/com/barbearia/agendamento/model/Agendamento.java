@@ -1,5 +1,7 @@
 package com.barbearia.agendamento.model;
 
+import com.barbearia.agendamento.enums.StatusAgendamento;
+
 public class Agendamento {
 
     private String nomeCliente;
@@ -10,7 +12,7 @@ public class Agendamento {
 
     private String horario;
 
-    private String status;
+    private StatusAgendamento status;
 
     public String getNomeCliente() {
         return nomeCliente;
@@ -38,10 +40,11 @@ public class Agendamento {
         public void setHorario (String horario){
             this.horario = horario;
         }
-    public String getStatus() {
+    public StatusAgendamento getStatus() {
+
         return status;
     }
-        public void setStatus (String status){
+        public void setStatus (StatusAgendamento status){
             this.status = status;
         }
 
