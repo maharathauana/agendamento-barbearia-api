@@ -12,15 +12,16 @@ public class HelloController {
         return "Servidor da barbearia funcionando!";
     }
     @GetMapping("/api/agendamento")
+
     public Agendamento criarAgendamentoTeste() {
-    }
+
 
 
     Agendamento agendamento = new Agendamento();
 
-agendamento.setnomeCliente("Juan");
+agendamento.setNomeCliente("Juan");
 
-agendamento.setnomeBarbeiro("Felipe");
+agendamento.setNomeBarbeiro("Felipe");
 
 agendamento.setData("2026-05-28");
 
@@ -28,8 +29,6 @@ agendamento.setHorario("14:00");
 
 agendamento.setStatus("AGENDADO");
 
-return "Cliente: " + agendamento.getNomeCliente()
-        + " | Barbeiro: " + agendamento.getNomeBarbeiro();
-
+return agendamento;
     }
 }

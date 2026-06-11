@@ -12,7 +12,7 @@ public class Agendamento {
 
     private String status;
 
-    public String getnomeCliente() {
+    public String getNomeCliente() {
         return nomeCliente;
     }
         public void setNomeCliente (String nomeCliente){
@@ -20,9 +20,7 @@ public class Agendamento {
         }
 
 
-    public String getNomeBarbeiro() {
-        return nomeBarbeiro;
-    }
+    public String getNomeBarbeiro() { return nomeBarbeiro;}
         public void setNomeBarbeiro (String nomeBarbeiro){
             this.nomeBarbeiro = nomeBarbeiro;
         }
@@ -30,22 +28,21 @@ public class Agendamento {
     public String getData() {
         return data;
     }
-        public void setData (String Data){
+        public void setData (String data){
             this.data = data;
         }
 
-    public String gethorario() {
+    public String getHorario() {
         return horario;
     }
-        public void sethorario (String horario){
+        public void setHorario (String horario){
             this.horario = horario;
         }
-    public String getstatus() {
+    public String getStatus() {
         return status;
     }
-        public void setstatus (String status){
+        public void setStatus (String status){
             this.status = status;
-
         }
 
 
