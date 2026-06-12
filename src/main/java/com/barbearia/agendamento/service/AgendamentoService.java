@@ -13,6 +13,7 @@ import java.time.LocalDate;
             if (agendamento.getData().isBefore(LocalDate.now())) {
                 throw new RuntimeException("Não é possível agendar em datas passadas");
             }
+
             agendamento.setStatus(StatusAgendamento.AGENDADO);
             for (Agendamento existente : agendamentos){
                 if (existente.getNomeBarbeiro().equals(agendamento.getNomeBarbeiro())){
@@ -35,6 +36,13 @@ import java.time.LocalDate;
             agendamentos.add(agendamento);
 
             return agendamento;
+
+
+        }
+
+        public List<Agendamento> listarAgendamentos() {
+            return agendamentos;
         }
     }
+
 
