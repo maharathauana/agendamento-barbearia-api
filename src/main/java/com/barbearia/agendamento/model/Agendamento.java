@@ -1,6 +1,7 @@
 package com.barbearia.agendamento.model;
 
 import com.barbearia.agendamento.enums.StatusAgendamento;
+import java.time.LocalDate;
 
 public class Agendamento {
 
@@ -8,7 +9,7 @@ public class Agendamento {
 
     private String nomeBarbeiro;
 
-    private String data;
+    private LocalDate data;
 
     private String horario;
 
@@ -27,13 +28,12 @@ public class Agendamento {
             this.nomeBarbeiro = nomeBarbeiro;
         }
 
-    public String getData() {
+    public LocalDate getData() {
         return data;
     }
-        public void setData (String data){
-            this.data = data;
-        }
-
+public void setData(LocalDate data){
+        this.data = data;
+}
     public String getHorario() {
         return horario;
     }
