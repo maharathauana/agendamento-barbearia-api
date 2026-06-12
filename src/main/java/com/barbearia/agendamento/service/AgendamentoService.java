@@ -7,12 +7,12 @@ import java.time.LocalDate;
 
     public class AgendamentoService {
         private List<Agendamento> agendamentos = new ArrayList<>();
-        public Agendamento criarAgendamento() {
-            Agendamento agendamento = new Agendamento();
-            agendamento.setNomeCliente("Juan");
-            agendamento.setNomeBarbeiro("Felipe");
-            agendamento.setData(LocalDate.of(2026, 5, 28));
-            agendamento.setHorario("14:00");
+        public Agendamento criarAgendamento(Agendamento agendamento) {
+
+
+            if (agendamento.getData().isBefore(LocalDate.now())) {
+                throw new RuntimeException("Não é possível agendar em datas passadas");
+            }
             agendamento.setStatus(StatusAgendamento.AGENDADO);
             for (Agendamento existente : agendamentos){
                 if (existente.getNomeBarbeiro().equals(agendamento.getNomeBarbeiro())){
