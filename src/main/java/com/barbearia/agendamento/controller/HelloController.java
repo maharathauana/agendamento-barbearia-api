@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import java.util.List;
 
 @RestController
@@ -23,10 +25,16 @@ public class HelloController {
     public Agendamento criarAgendamentoTeste(@RequestBody Agendamento agendamento) {
         return agendamentoService.criarAgendamento(agendamento);
     }
+
     @GetMapping("api/agendamentos")
-    public List<Agendamento>listarAgendamentos() {
+    public List<Agendamento> listarAgendamentos() {
         return agendamentoService.listarAgendamentos();
 
     }
+    @PutMapping("/api/agendamento/{id}/cancelar")
+    public Agendamento cancelarAgendamento(@PathVariable Long id) {
+        return agendamentoService.cancelarAgendamento(id);
     }
+}
+
 
