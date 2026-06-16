@@ -4,7 +4,15 @@ import com.barbearia.agendamento.enums.StatusAgendamento;
 import java.time.LocalDate;
 
 public class Agendamento {
+    private Long id;
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
     private String nomeCliente;
 
     private String nomeBarbeiro;
@@ -47,6 +55,7 @@ public void setData(LocalDate data){
         public void setStatus (StatusAgendamento status){
             this.status = status;
         }
+
 
 
 }

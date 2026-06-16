@@ -7,6 +7,7 @@ import java.time.LocalDate;
 
     public class AgendamentoService {
         private List<Agendamento> agendamentos = new ArrayList<>();
+        private Long proximoId = 1L;
         public Agendamento criarAgendamento(Agendamento agendamento) {
 
 
@@ -31,7 +32,8 @@ import java.time.LocalDate;
                     }
                 }
             }
-
+            agendamento.setId(proximoId);
+            proximoId++;
 
             agendamentos.add(agendamento);
 
@@ -42,6 +44,20 @@ import java.time.LocalDate;
 
         public List<Agendamento> listarAgendamentos() {
             return agendamentos;
+        }
+        public Agendamento cancelarAgendamento(Long id) {
+
+            for (Agendamento existente : agendamentos) {
+
+                if (existente.getId().equals(id)) {
+
+                    existente.setStatus(StatusAgendamento.CANCELADO);
+
+                    return existente;
+                }
+            }
+
+            throw new RuntimeException("Agendamento não encontrado");
         }
     }
 
