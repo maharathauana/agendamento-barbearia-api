@@ -59,6 +59,20 @@ import java.time.LocalDate;
 
             throw new RuntimeException("Agendamento não encontrado");
         }
+
+        public Agendamento concluirAgendamento(Long id){
+            for (Agendamento existente : agendamentos) {
+                if(existente.getId().equals(id)) {
+
+                    existente.setStatus(StatusAgendamento.CONCLUIDO);
+                    return existente;
+
+                }
+
+                throw new RuntimeException("Agendamento não encontrado");
+            }
+            return null;
+        }
     }
 
 

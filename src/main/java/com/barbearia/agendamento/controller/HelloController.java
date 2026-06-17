@@ -35,6 +35,10 @@ public class HelloController {
     public Agendamento cancelarAgendamento(@PathVariable Long id) {
         return agendamentoService.cancelarAgendamento(id);
     }
+    @PutMapping("/api/agendamento/{id}/concluir")
+    public Agendamento concluirAgendamento(@PathVariable Long id) {
+        return agendamentoService.concluirAgendamento(id);
+    }
 }
 
 
