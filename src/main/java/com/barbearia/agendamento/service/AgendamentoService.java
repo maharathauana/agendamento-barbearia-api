@@ -4,6 +4,8 @@ import com.barbearia.agendamento.model.Agendamento;
 import java.util.ArrayList;
 import java.util.List;
 import java.time.LocalDate;
+import org.springframework.web.server.ResponseStatusException;
+import org.springframework.http.HttpStatus;
 
     public class AgendamentoService {
         private List<Agendamento> agendamentos = new ArrayList<>();
@@ -81,6 +83,21 @@ import java.time.LocalDate;
             }
 
             throw new RuntimeException("Agendamento não encontrado");
+        }
+        public Agendamento buscarAgendamento(Long id) {
+
+            for (Agendamento existente : agendamentos) {
+
+                if (existente.getId().equals(id)) {
+
+                    return existente;
+                }
+            }
+
+            throw new ResponseStatusException(
+                    HttpStatus.NOT_FOUND,
+                    "Agendamento não encontrado"
+            );
         }
     }
 

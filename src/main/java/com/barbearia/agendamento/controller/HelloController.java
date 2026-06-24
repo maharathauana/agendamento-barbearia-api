@@ -39,6 +39,10 @@ public class HelloController {
     public Agendamento concluirAgendamento(@PathVariable Long id) {
         return agendamentoService.concluirAgendamento(id);
     }
+    @GetMapping("/api/agendamento/{id}")
+    public Agendamento buscarAgendamento(@PathVariable Long id) {
+        return agendamentoService.buscarAgendamento(id);
+    }
 }
 
 

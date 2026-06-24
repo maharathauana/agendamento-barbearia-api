@@ -39,7 +39,7 @@ public class Agendamento {
     public LocalDate getData() {
         return data;
     }
-public void setData(LocalDate data){
+    public void setData(LocalDate data){
         this.data = data;
 }
     public String getHorario() {
